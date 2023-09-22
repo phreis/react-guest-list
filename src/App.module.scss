@@ -1,0 +1,121 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-top: 6%;
+  background-color: #7a9e7e;
+  .mainForm {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #31493c;
+    border-radius: 8px;
+    margin-bottom: 3%;
+    gap: 8px;
+    padding: 15px;
+    color: #e8f1f2ff;
+    input {
+      font-size: 2rem;
+    }
+  }
+  .mainGuests {
+    border-radius: 8px;
+    background-color: #b3efb2ff;
+    margin-bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    input {
+      font-size: 2rem;
+    }
+  }
+}
+.fade-in-image {
+  animation: fadeIn 5s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* SCSS Gradient */
+$gradient-top: linear-gradient(
+  0deg,
+  #e8f1f2ff,
+  #b3efb2ff,
+  #7a9e7eff,
+  #31493cff,
+  #001a23ff
+);
+$gradient-right: linear-gradient(
+  90deg,
+  #e8f1f2ff,
+  #b3efb2ff,
+  #7a9e7eff,
+  #31493cff,
+  #001a23ff
+);
+$gradient-bottom: linear-gradient(
+  180deg,
+  #e8f1f2ff,
+  #b3efb2ff,
+  #7a9e7eff,
+  #31493cff,
+  #001a23ff
+);
+$gradient-left: linear-gradient(
+  270deg,
+  #e8f1f2ff,
+  #b3efb2ff,
+  #7a9e7eff,
+  #31493cff,
+  #001a23ff
+);
+$gradient-top-right: linear-gradient(
+  45deg,
+  #e8f1f2ff,
+  #b3efb2ff,
+  #7a9e7eff,
+  #31493cff,
+  #001a23ff
+);
+$gradient-bottom-right: linear-gradient(
+  135deg,
+  #e8f1f2ff,
+  #b3efb2ff,
+  #7a9e7eff,
+  #31493cff,
+  #001a23ff
+);
+$gradient-top-left: linear-gradient(
+  225deg,
+  #e8f1f2ff,
+  #b3efb2ff,
+  #7a9e7eff,
+  #31493cff,
+  #001a23ff
+);
+$gradient-bottom-left: linear-gradient(
+  315deg,
+  #e8f1f2ff,
+  #b3efb2ff,
+  #7a9e7eff,
+  #31493cff,
+  #001a23ff
+);
+$gradient-radial: radial-gradient(
+  #e8f1f2ff,
+  #b3efb2ff,
+  #7a9e7eff,
+  #31493cff,
+  #001a23ff
+);

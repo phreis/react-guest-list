@@ -1,8 +1,20 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Plusjakartasans, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-left: 10%;
+  padding-right: 10%;
 }
+
+/* @font-face {
+  font-family: 'Grifter';
+  src: local('Grifter'), url(fonts/grifter.otf) format('opentype');
+}
+ */
