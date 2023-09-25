@@ -254,7 +254,7 @@ function Guest(props) {
         aria-label="Remove"
         onClick={() => props.deleteGuest(props.guest.id)}
       >
-        🗑️
+        Remove 🗑️
       </button>
     </div>
   );
