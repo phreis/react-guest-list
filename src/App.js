@@ -191,8 +191,8 @@ function Guest(props) {
   const [guestFormData, setGuestFormData] = useState(props.guest);
 
   return (
-    <div data-test-id="guest" className={styles.mainGuests}>
-      <div>
+    <div className={styles.mainGuests}>
+      <div data-test-id="guest">
         <label htmlFor="Attending">attending</label>
         <input
           type="checkbox"
