@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import styles from './App.module.scss';
 
-const apiBaseUrl = 'http://localhost:4000';
+const apiBaseUrl =
+  'http://express-guest-list-api-memory-data-store--phreis.repl.co';
 
 class GuestType {
   constructor(id = uuid(), firstName, lastName, attending = false) {
