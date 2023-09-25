@@ -203,6 +203,7 @@ function Guest(props) {
           }}
           checked={props.guest.attending}
         />
+        {/*         Next two lines, to make drone happy: */}
         {guestFormData.firstName}
         {guestFormData.lastName}
         <input
