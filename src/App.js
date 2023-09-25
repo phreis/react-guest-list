@@ -188,64 +188,57 @@ function Guest(props) {
   const [guestFormData, setGuestFormData] = useState(props.guest);
 
   return (
-    <div className={styles.mainGuests}>
-      <form
-        data-test-id="guest"
-        onSubmit={(event) => {
-          // setGuestFormData({ firstName: '', lastName: '' }); /
-          event.preventDefault();
+    <div className={styles.mainGuests} data-test-id="guest">
+      <label htmlFor="Attending">attending</label>
+      <input
+        type="checkbox"
+        id="attending"
+        name="attending"
+        aria-label="attending"
+        onChange={(event) => {
+          props.updateGuest({
+            ...props.guest,
+            attending: event.target.checked,
+          });
         }}
+        checked={props.guest.attending}
+      />
+
+      <input
+        onInput={(event) => {
+          setGuestFormData({
+            ...guestFormData,
+            firstName: event.target.value,
+          });
+          // setFirstName(event.target.value);
+        }}
+        value={guestFormData.firstName}
+        id="firstName"
+        disabled={!editMode}
+      />
+
+      <input
+        onInput={(event) => {
+          setGuestFormData({
+            ...guestFormData,
+            lastName: event.target.value,
+          });
+          // setLastName(event.target.value);
+        }}
+        value={guestFormData.lastName}
+        id="lastName"
+        disabled={!editMode}
+      />
+      <button
+        onClick={() => {
+          props.updateGuest(guestFormData);
+          setEditMode(false);
+        }}
+        disabled={!editMode}
       >
-        <label htmlFor="Attending">attending</label>
-        <input
-          type="checkbox"
-          id="attending"
-          name="attending"
-          aria-label="attending"
-          onChange={(event) => {
-            props.updateGuest({
-              ...props.guest,
-              attending: event.target.checked,
-            });
-          }}
-          checked={props.guest.attending}
-        />
+        Save
+      </button>
 
-        <input
-          onInput={(event) => {
-            setGuestFormData({
-              ...guestFormData,
-              firstName: event.target.value,
-            });
-            // setFirstName(event.target.value);
-          }}
-          value={guestFormData.firstName}
-          id="firstName"
-          disabled={!editMode}
-        />
-
-        <input
-          onInput={(event) => {
-            setGuestFormData({
-              ...guestFormData,
-              lastName: event.target.value,
-            });
-            // setLastName(event.target.value);
-          }}
-          value={guestFormData.lastName}
-          id="lastName"
-          disabled={!editMode}
-        />
-        <button
-          onClick={() => {
-            props.updateGuest(guestFormData);
-            setEditMode(false);
-          }}
-          disabled={!editMode}
-        >
-          Save
-        </button>
-      </form>
       <button onClick={() => setEditMode(!editMode)}>✍️</button>
       <button
         aria-label="Remove"
