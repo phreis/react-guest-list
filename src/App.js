@@ -165,7 +165,7 @@ export default function App() {
           {guestList.filter((guest) => guest.attending === true).length} of{' '}
           {guestList.length} attending)
         </h2>
-        {isBusy && <div data-test-id="guest">Loading...</div>}
+        {isBusy && <div>Loading...</div>}
       </div>
 
       {guestList.toReversed().map((guest) => (
