@@ -116,7 +116,7 @@ export default function App() {
 
   return (
     <main className={styles.main}>
-      <div data-test-id="_guest">
+      <div data-test-id="guest">
         <form
           className={styles.mainForm}
           onSubmit={(event) => {
@@ -159,26 +159,23 @@ export default function App() {
             Add Guest
           </button>
         </form>
+
         <h2>
           Guest list (
           {guestList.filter((guest) => guest.attending === true).length} of{' '}
           {guestList.length} attending)
         </h2>
-        {isBusy ? (
-          <div>Loading...</div>
-        ) : (
-          guestList
-            .toReversed()
-            .map((guest) => (
-              <Guest
-                key={`guest-${guest.id}`}
-                guest={guest}
-                deleteGuest={deleteGuest}
-                updateGuest={updateGuest}
-              />
-            ))
-        )}
+        {isBusy && <div>Loading...</div>}
       </div>
+
+      {guestList.toReversed().map((guest) => (
+        <Guest
+          key={`guest-${guest.id}`}
+          guest={guest}
+          deleteGuest={deleteGuest}
+          updateGuest={updateGuest}
+        />
+      ))}
     </main>
   );
 }
