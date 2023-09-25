@@ -116,7 +116,7 @@ export default function App() {
 
   return (
     <main className={styles.main}>
-      <div data-test-id="guest">
+      <div data-test-id="_guest">
         <form
           className={styles.mainForm}
           onSubmit={(event) => {
