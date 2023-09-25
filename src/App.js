@@ -118,57 +118,54 @@ export default function App() {
 
   return (
     <main className={styles.main}>
-      <div>
-        <form
-          className={styles.mainForm}
-          onSubmit={(event) => {
-            setGuestFormData({ firstName: '', lastName: '' });
-            event.preventDefault();
+      <form
+        className={styles.mainForm}
+        onSubmit={(event) => {
+          setGuestFormData({ firstName: '', lastName: '' });
+          event.preventDefault();
+        }}
+      >
+        <label htmlFor="firstName">First name</label>
+        <input
+          onInput={(event) => {
+            setGuestFormData({
+              ...guestFormData,
+              firstName: event.target.value,
+            });
+            // setFirstName(event.target.value);
           }}
+          value={guestFormData.firstName}
+          id="firstName"
+          disabled={isBusy}
+        />
+        <label htmlFor="lastName">Last name</label>
+        <input
+          onInput={(event) => {
+            setGuestFormData({
+              ...guestFormData,
+              lastName: event.target.value,
+            });
+            // setLastName(event.target.value);
+          }}
+          value={guestFormData.lastName}
+          id="lastName"
+          disabled={isBusy}
+        />
+        <button
+          onClick={() => {
+            addGuest(guestFormData.firstName, guestFormData.lastName);
+          }}
+          disabled={isBusy}
         >
-          <label htmlFor="firstName">First name</label>
-          <input
-            onInput={(event) => {
-              setGuestFormData({
-                ...guestFormData,
-                firstName: event.target.value,
-              });
-              // setFirstName(event.target.value);
-            }}
-            value={guestFormData.firstName}
-            id="firstName"
-            disabled={isBusy}
-          />
-          <label htmlFor="lastName">Last name</label>
-          <input
-            onInput={(event) => {
-              setGuestFormData({
-                ...guestFormData,
-                lastName: event.target.value,
-              });
-              // setLastName(event.target.value);
-            }}
-            value={guestFormData.lastName}
-            id="lastName"
-            disabled={isBusy}
-          />
-          <button
-            onClick={() => {
-              addGuest(guestFormData.firstName, guestFormData.lastName);
-            }}
-            disabled={isBusy}
-          >
-            Add Guest
-          </button>
-        </form>
-
-        <h2>
-          Guest list (
-          {guestList.filter((guest) => guest.attending === true).length} of{' '}
-          {guestList.length} attending)
-        </h2>
-        {isBusy && <div>Loading...</div>}
-      </div>
+          Add Guest
+        </button>
+      </form>
+      <h2>
+        Guest list (
+        {guestList.filter((guest) => guest.attending === true).length} of{' '}
+        {guestList.length} attending)
+      </h2>
+      {isBusy && <div>Loading...</div>}
 
       {guestList.toReversed().map((guest) => (
         <Guest
