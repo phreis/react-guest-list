@@ -116,7 +116,7 @@ export default function App() {
 
   return (
     <main className={styles.main}>
-      <div data-test-id="guest">
+      <div>
         <form
           className={styles.mainForm}
           onSubmit={(event) => {
@@ -165,7 +165,7 @@ export default function App() {
           {guestList.filter((guest) => guest.attending === true).length} of{' '}
           {guestList.length} attending)
         </h2>
-        {isBusy && <div>Loading...</div>}
+        {isBusy && <div data-test-id="guest">Loading...</div>}
       </div>
 
       {guestList.toReversed().map((guest) => (
