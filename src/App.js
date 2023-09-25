@@ -212,6 +212,7 @@ function Guest(props) {
           }}
         >
           <input
+            data-test-id="guest"
             onInput={(event) => {
               setGuestFormData({
                 ...guestFormData,
@@ -225,6 +226,7 @@ function Guest(props) {
           />
 
           <input
+            data-test-id="guest"
             onInput={(event) => {
               setGuestFormData({
                 ...guestFormData,
