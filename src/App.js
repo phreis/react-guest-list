@@ -23,7 +23,7 @@ function uuid() {
 export default function App() {
   const [guestFormData, setGuestFormData] = useState((new GuestType().id = ''));
   const [guestList, setGuestList] = useState([]);
-  const [isBusy, setIsBusy] = useState(false);
+  const [isBusy, setIsBusy] = useState(true);
 
   useEffect(() => {
     fetch(`${apiBaseUrl}/guests`)
