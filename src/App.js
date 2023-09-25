@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './App.module.scss';
 
 const apiBaseUrl =
-  'http://express-guest-list-api-memory-data-store--phreis.repl.co';
+  'https://express-guest-list-api-memory-data-store--phreis.repl.co';
 
 class GuestType {
   constructor(id = uuid(), firstName, lastName, attending = false) {
