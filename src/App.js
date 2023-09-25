@@ -191,7 +191,7 @@ function Guest(props) {
   const [guestFormData, setGuestFormData] = useState(props.guest);
 
   return (
-    <div className={styles.mainGuests}>
+    <div data-test-id="guest" className={styles.mainGuests}>
       <div>
         <label htmlFor="Attending">attending</label>
         <input
