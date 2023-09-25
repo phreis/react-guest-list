@@ -33,7 +33,7 @@ export default function App() {
         setGuestList(result);
       })
       .catch((err) => {
-        // setIsBusy(false);
+        setIsBusy(false);
         throw err;
       });
   }, []);
