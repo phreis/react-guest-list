@@ -188,7 +188,7 @@ function Guest(props) {
 
   return (
     <div className={styles.mainGuests}>
-      <div data-test-id="guest_">
+      <div data-test-id="guest">
         <label htmlFor="Attending">attending</label>
         <input
           type="checkbox"
@@ -205,7 +205,7 @@ function Guest(props) {
         />
         {guestFormData.firstName}
         {guestFormData.lastName}
-        {/*         <input
+        <input
           onInput={(event) => {
             setGuestFormData({
               ...guestFormData,
@@ -229,7 +229,7 @@ function Guest(props) {
           value={guestFormData.lastName}
           id="lastName"
           disabled={!editMode}
-        /> */}
+        />
         <button
           onClick={() => {
             props.updateGuest(guestFormData);
