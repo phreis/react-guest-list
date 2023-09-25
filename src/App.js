@@ -209,7 +209,7 @@ function Guest(props) {
       </div>
       <form
         onSubmit={(event) => {
-          // setGuestFormData({ firstName: '', lastName: '' });
+          // setGuestFormData({ firstName: '', lastName: '' }); /
           event.preventDefault();
         }}
       >
