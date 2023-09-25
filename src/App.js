@@ -188,8 +188,9 @@ function Guest(props) {
   const [guestFormData, setGuestFormData] = useState(props.guest);
 
   return (
-    <div className={styles.mainGuests} data-test-id="guest">
+    <div className={styles.mainGuests}>
       <form
+        data-test-id="guest"
         onSubmit={(event) => {
           // setGuestFormData({ firstName: '', lastName: '' }); /
           event.preventDefault();
