@@ -190,29 +190,28 @@ function Guest(props) {
   return (
     <div className={styles.mainGuests}>
       <div data-test-id="guest">
-        <label htmlFor="Attending">attending</label>
-        <input
-          type="checkbox"
-          id="attending"
-          name="attending"
-          aria-label="attending"
-          onChange={(event) => {
-            props.updateGuest({
-              ...props.guest,
-              attending: event.target.checked,
-            });
-          }}
-          checked={props.guest.attending}
-        />
-
         <form
           onSubmit={(event) => {
             // setGuestFormData({ firstName: '', lastName: '' }); /
             event.preventDefault();
           }}
         >
+          <label htmlFor="Attending">attending</label>
           <input
-            data-test-id="guest"
+            type="checkbox"
+            id="attending"
+            name="attending"
+            aria-label="attending"
+            onChange={(event) => {
+              props.updateGuest({
+                ...props.guest,
+                attending: event.target.checked,
+              });
+            }}
+            checked={props.guest.attending}
+          />
+
+          <input
             onInput={(event) => {
               setGuestFormData({
                 ...guestFormData,
@@ -226,7 +225,6 @@ function Guest(props) {
           />
 
           <input
-            data-test-id="guest"
             onInput={(event) => {
               setGuestFormData({
                 ...guestFormData,
