@@ -250,7 +250,12 @@ function Guest(props) {
         </button>
       </form>
       <button onClick={() => setEditMode(!editMode)}>✍️</button>
-      <button onClick={() => props.deleteGuest(props.guest.id)}>🗑️</button>
+      <button
+        aria-label="Remove"
+        onClick={() => props.deleteGuest(props.guest.id)}
+      >
+        🗑️
+      </button>
     </div>
   );
 }
